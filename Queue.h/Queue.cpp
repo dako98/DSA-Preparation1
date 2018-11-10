@@ -31,7 +31,7 @@ void Queue::Push(int element)
 {
 	if (size==0)
 	{
-		first = Box(element);
+		first = new Box(element);
 		last = first;
 	}
 }

@@ -2,6 +2,8 @@
 #define _LIST_
 
 
+
+
 class List
 {
 public:
@@ -20,7 +22,7 @@ public:
 
 	bool Exists(int data);
 	void RemoveAfter(int data);
-	
+
 
 private:
 
@@ -40,5 +42,6 @@ private:
 
 	Box* head;
 	Box* tail;
-}
-#endif // !_FORWARD_LIST_
+};
+
+#endif // !__List__

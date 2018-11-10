@@ -1,16 +1,16 @@
-#include "ForwardList.h"
+#include "List.h"
 
-ForwardList::ForwardList()
+List::List()
 	:head(nullptr)
-	, tail(nullptr)
-{}
+	,tail(nullptr)
+{ }
 
-ForwardList::ForwardList(const ForwardList & other)
+List::List(const List & other)
 {
 	Copy(other);
 }
 
-ForwardList & ForwardList::operator=(const ForwardList & other)
+List & List::operator=(const List & other)
 {
 	if (this!=&other)
 	{
@@ -20,12 +20,12 @@ ForwardList & ForwardList::operator=(const ForwardList & other)
 	return *this;
 }
 
-ForwardList::~ForwardList()
+List::~List()
 {
 	Clear();
 }
 
-void ForwardList::PushFront(int element)
+void List::PushFront(int element)
 {
 	Box* newElement = new Box(element, head);
 
@@ -35,7 +35,7 @@ void ForwardList::PushFront(int element)
 	head = newElement;
 }
 
-void ForwardList::PushBack(int element)
+void List::PushBack(int element)
 {
 	if (tail != nullptr)
 	{
@@ -48,7 +48,7 @@ void ForwardList::PushBack(int element)
 	}
 }
 
-void ForwardList::PopFront()
+void List::PopFront()
 {
 	if (head != nullptr)
 	{
@@ -69,7 +69,7 @@ void ForwardList::PopFront()
 	}
 }
 
-void ForwardList::PopBack()
+void List::PopBack()
 {
 	if (head != nullptr)
 	{
@@ -92,7 +92,7 @@ void ForwardList::PopBack()
 	}
 }
 
-bool ForwardList::Exists(int data)
+bool List::Exists(int data)
 {
 	Box* current = head;
 	while (current!=tail)
@@ -105,7 +105,7 @@ bool ForwardList::Exists(int data)
 	return false;
 }
 
-void ForwardList::RemoveAfter(int data)
+void List::RemoveAfter(int data)
 {
 	if (head!=nullptr)
 	{
@@ -132,7 +132,7 @@ void ForwardList::RemoveAfter(int data)
 	}
 }
 
-void ForwardList::Copy(const ForwardList & other)
+void List::Copy(const List & other)
 {
 	this->head = new Box(other.head->data);
 
@@ -149,7 +149,7 @@ void ForwardList::Copy(const ForwardList & other)
 	this->tail = write;
 }
 
-void ForwardList::Clear()
+void List::Clear()
 {
 	Box* current = head;
 	
